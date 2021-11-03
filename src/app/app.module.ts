@@ -18,6 +18,10 @@ import { AuthguardServiceService } from './authguard-service.service';
 import { KartUploadComponent } from './kart-upload/kart-upload.component';
 // import { NgModule } from '@angular/core';  
 // import {Routes, RouterModule } from '@angular/router';  
+import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+const config: SocketIoConfig = { 
+  url: 'http://localhost:4200', options: {}
+};
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,6 +40,7 @@ import { KartUploadComponent } from './kart-upload/kart-upload.component';
     FormsModule,
     BrowserAnimationsModule,
     Ng2SearchPipeModule,
+    SocketIoModule.forRoot(config)
     // RouterModule.forRoot(routes),
     
   ],

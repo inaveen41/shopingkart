@@ -16,6 +16,7 @@ import { HomeComponent } from './home/home.component';
 import { CookieService } from "angular2-cookie/services/cookies.service";
 import { AuthguardServiceService } from './authguard-service.service';
 import { KartUploadComponent } from './kart-upload/kart-upload.component';
+// import { HttpModule } from '@angular/http';
 // import { NgModule } from '@angular/core';  
 // import {Routes, RouterModule } from '@angular/router';  
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';

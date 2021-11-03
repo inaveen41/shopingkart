@@ -1,0 +1,50 @@
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<div>
+    <div *ngIf="isOpen" @container>
+        <div class="triangle-top-left" @enterExitLeft>
+
+        </div>
+        <div class="triangle-botom-left" @enterExitRight>
+
+        </div>
+    </div>
+    <div class="circle" [@openClose]="isOpen ? 'open' : 'closed'">
+        <div style="width:80%;">
+            <h3 style="text-align: center; margin-top:10%">Login</h3>
+            <form style="margin-left: 5%; margin-top: 11%;">
+                <div class="form-group" style="margin-left: 19%;">
+                    <label> Email Id</label>
+                    <input type="text" class="form-control" id="emailId" [(ngModel)]="email" name="emailId">
+                    <!-- [(ngModel)]="employee.emailId" -->
+                </div>
+                <div class="form-row" style="margin-left: 19%;">
+                    <label> password</label>
+                    <div class="col-11">
+                        <span>
+                        <input type="password" class="form-control" id="password" [(ngModel)]="user_password" name="password">
+                        <!-- [(ngModel)]="employee.password"  -->
+                    </span>
+                    </div>
+                    <div class="col">
+                        <span>
+                        <button (click)="onClick()" class="eye">
+                            <i class="fa fa-eye" aria-hidden="true" *ngIf="!show"></i>
+                            <i class="fa fa-eye-slash" aria-hidden="true" *ngIf="show"></i>
+                          </button>
+                    </span>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+        <div class="center">
+            <button class=" btn btn-primary" (click)="open()">login</button>
+        </div>
+
+
+
+    </div>
+
+</div>

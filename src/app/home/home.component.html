@@ -1,0 +1,26 @@
+<div>
+    <img src="assets\shoping.jpg" class="main-img">
+    <div class="content" style="top:2vw; margin-top:6%">
+        <p style="margin-top: -14%;"><span>B</span>est to</p>
+        <!-- <p><span style="font-size: 7vw;">T</span>o</p> -->
+        <p style="margin-top: -14%;"><span>B</span>uy</p>
+        <p style="margin-top: -14%;"><span>H</span>ere</p>
+    </div>
+</div>
+<p style="font-weight: bold;font-size: 4vw;font-family: Helvetica; text-align: center; color: orange">Start SHOPING</p>
+
+
+<div *ngFor="let kart of kart" style="display: inline-block;margin-top: 3%; margin-left: 4%; align-self: center;">
+    <!-- <div class="row"> -->
+    <div style="margin-left:1%;  padding: 4%;border-style: solid; border-color: orange;">
+        <p style="text-align: center; font-weight: bold; font-size: 30px; margin-bottom: 0%">{{kart.title}}</p>
+        <img [src]="'data:image/jpeg;base64,'+kart.image" style="height: 20vw;width:90%; margin-left: 6%;">
+        <p style="text-align: center;">{{kart.description}}</p>
+        <p style="font-weight: bold; font-size: 20px;">₹: {{kart.price}}/-</p>
+        <button style="margin-left: 5%;margin-top: 1%; width:50%;height:3vw; background-color:yellowgreen;">Add to cart</button >
+             <button style="margin-left: 5%; margin-top: 1%; width:40%; height:3vw; background-color: yellow;">Buy</button>
+    </div>
+
+    <!-- </div> -->
+
+</div>

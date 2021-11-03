@@ -1,0 +1,52 @@
+<div class="col-md-6 offset-md-3">
+    <h3> Update Employee </h3>
+    <a style="color: red;">{{emailerror}}</a>
+    <a style="color: red;">{{passerror}}</a>
+    <form (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+            <label> First Name</label>
+            <input type="text" class="form-control" id="firstName" [(ngModel)]="employee.firstName" name="firstName">
+        </div>
+
+        <div class="form-group">
+            <label> Last Name</label>
+            <input type="text" class="form-control" id="lastName" [(ngModel)]="employee.lastName" name="lastName">
+        </div>
+
+        <div class="form-group">
+            <label> Email Id</label>
+            <input type="text" class="form-control" id="emailId" [(ngModel)]="employee.emailId" name="emailId">
+        </div>
+        <div class="form-group">
+            <label> password</label>
+            <input type="password" class="form-control" id="password" [(ngModel)]="employee.password" name="password">
+        </div>
+        <div class="form-group">
+            <label> confirm password</label>
+            <input type="password" class="form-control" id="confirmPassword" [(ngModel)]="confirmPassword" name="confirmPassword">
+        </div>
+        <div class="container row">
+            <div class="col-md-12">
+                <div *ngIf=retrievedImage>
+                    <div>
+                        <img [src]="retrievedImage" style="height: 20vw;width:10vw">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="container row">
+            <div class="col-md-6">
+                <input type="file" (change)="onFileChanged($event)" name="change image">
+                <!-- [(ngModel)]="employee.image" name="image" -->
+            </div>
+            <!-- <div class="col-md-6">
+                <input type="button" (click)="onUpload()" value="upload">
+            </div> -->
+        </div>
+        <!-- <button (onclick)="updateimage(employee.emailId)">change image</button> -->
+        <button class="btn btn-success" type="submit">Submit</button>
+
+    </form>
+</div>

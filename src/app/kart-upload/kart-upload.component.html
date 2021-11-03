@@ -1,0 +1,72 @@
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<div class="col-md-6 offset-md-3">
+    <h3> Uppload to kart </h3>
+    <!-- <a style="color: red;">{{msg}}</a><br>
+  <a style="color: red;">{{pas_err}}</a><br>
+  <a style="color: red;">{{errorimage}}</a> -->
+    <form>
+        <!-- (ngSubmit)="onSubmit()" -->
+        <div class="form-group">
+            <label> Title</label>
+            <input type="text" class="form-control" id="title" [(ngModel)]="kart.title" name="title">
+        </div>
+
+        <div class="form-group">
+            <label> discription</label>
+            <input type="text" class="form-control" id="discription" [(ngModel)]="kart.description" name="discription">
+        </div>
+
+        <div class="form-group">
+            <label> Quantity</label>
+            <input type="number" class="form-control" id="Quantity" [(ngModel)]="kart.quantity" name="Quantity">
+        </div>
+
+        <div class="form-group">
+            <label> Rating</label>
+            <input type="number" class="form-control" id="Rating" [(ngModel)]="kart.rating" name="Rating">
+        </div>
+
+        <div class="form-group">
+            <label> No_Of_Raters</label>
+            <input type="number" class="form-control" id="No_Of_Raters" [(ngModel)]="kart.no_of_ratings" name="No_of_raters">
+        </div>
+
+        <div class="form-group">
+            <label> Price</label>
+            <input type="number" class="form-control" id="Price" [(ngModel)]="kart.price" name="Price">
+        </div>
+
+
+        <div class="container row">
+            <label> Uplload Image</label>
+        </div>
+
+        <div class="container row">
+            <div class="col-md-6">
+                <input type="file" (change)="onFileChanged($event)" name="image" id="image">
+                <!-- [(ngModel)]="employee.image" name="image" -->
+            </div>
+            <!-- <div class="col-md-6">
+              <input type="button" (click)="onUpload()" value="upload">
+          </div> -->
+        </div>
+        <hr />
+        <div class="container row">
+            <div class="col-md-12">
+                <!-- <div *ngIf=message>{{message}}</div> -->
+            </div>
+        </div>
+
+
+
+        <div style="margin-top: 10px; margin-bottom:10px; float: right;">
+
+            <button class="btn btn-success" (click)="onSubmit()">Submit</button>
+
+        </div>
+
+    </form>
+</div>

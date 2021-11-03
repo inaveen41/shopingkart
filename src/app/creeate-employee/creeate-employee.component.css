@@ -1,0 +1,14 @@
+.eye {
+    background: none;
+    border: none;
+    /* float: left; */
+    display: inline-block;
+    margin-top: 10%;
+}
+
+.eye:focus {
+    border: none;
+    background: none;
+    background-color: none;
+    /* background-color: blue; */
+}

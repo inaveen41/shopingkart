@@ -1,0 +1,50 @@
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> Accept: text/html Cookie: Version=1
+
+</head>
+
+<body>
+    <nav style="background-color:orange; display:inline-block; height:7%;width:100%; position:sticky; top: 0px;z-index: 2;">
+        <!-- <div> -->
+        <a routerLink="home" routerLinkActive="active" class="nav-com">Home</a>
+        <!-- </div> -->
+
+        <!-- <div *ngIf="level==4" style=" display: inline-block;"> -->
+        <a *ngIf="level==4" routerLink="employees" routerLinkActive="active" class="nav-com">Employee list</a>
+
+
+        <a *ngIf="level==4" routerLink="create-employee" routerLinkActive="active" class="nav-com">Create Employee</a>
+        <a *ngIf="level==4" routerLink="kart" routerLinkActive="active" class="nav-com">upload_to_kart</a>
+        <!-- </div> -->
+
+        <!-- <a routerLink="login" routerLinkActive="active" class="nav-com" style="float:right;left:0%;">login</a> -->
+        <div *ngIf="log_val==0">
+            <a routerLink="login" routerLinkActive="active" class="nav-com" style="float:right;margin-top:-4%">login</a>
+        </div>
+        <div *ngIf="log_val==1">
+            <a class="nav-com" style="float:right;margin-top:-4%" [routerLink]="" (click)="logout()">Log Out</a>
+        </div>
+
+    </nav>
+
+
+
+    <!-- <app-employee-list></app-employee-list> -->
+    <router-outlet></router-outlet>
+    <div class="form-group col-md-4">
+        <!-- <input type="text" class="form-control" placeholder="Enter Keyword for filter result" [(ngModel)]="searchedKeyword"> -->
+    </div>
+
+
+
+    <div>
+
+
+        <!-- <footer class="footer">
+            <div class="container">
+                <span>This application belongs to naveen</span>
+            </div>
+
+        </footer> -->
+    </div>
+</body>

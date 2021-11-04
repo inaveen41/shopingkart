@@ -6,7 +6,7 @@ import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { HomeComponent } from './home/home.component';
 import { KartUploadComponent } from './kart-upload/kart-upload.component';
 import { LoginComponent } from './login/login.component';
-
+// import BrowserRouter from 'react-router-dom/BrowserRouter'
 
 import { UpdateEmployeeComponent } from './update-employee/update-employee.component';
 import {AuthenticationGuard} from './authentication.guard';

@@ -17,7 +17,7 @@
         <img [src]="'data:image/jpeg;base64,'+kart.image" style="height: 20vw;width:90%; margin-left: 6%;">
         <p style="text-align: center;">{{kart.description}}</p>
         <p style="font-weight: bold; font-size: 20px;">₹: {{kart.price}}/-</p>
-        <button style="margin-left: 5%;margin-top: 1%; width:50%;height:3vw; background-color:yellowgreen;">Add to cart</button >
+        <button style="margin-left: 5%;margin-top: 1%; width:50%;height:3vw; background-color:yellowgreen;" (click)="addkart(kart.id,kart.price)">Add to cart</button >
              <button style="margin-left: 5%; margin-top: 1%; width:40%; height:3vw; background-color: yellow;">Buy</button>
     </div>
 

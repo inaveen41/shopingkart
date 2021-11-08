@@ -53,7 +53,7 @@ export class UpdateEmployeeComponent implements OnInit {
     this.selectedFile = event.target.files[0];
     console.log("file selcted "+ this.selectedFile.name);
     console.log(this.selectedFile);
-    
+
    
     // this.employee.image=this.selectedFile;
     

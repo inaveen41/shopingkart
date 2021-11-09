@@ -94,7 +94,14 @@ export class LoginComponent implements OnInit {
   user='1';
   log:boolean;
 
-  constructor(private httpClient: HttpClient, private cookie:CookieService,private route: ActivatedRoute, private auth: AuthguardServiceService, private router:Router) { }
+  constructor(private httpClient: HttpClient, private cookie:CookieService,private route: ActivatedRoute, private auth: AuthguardServiceService, private router:Router) { 
+    if (this.auth.loggedIn) {  
+      this.router.navigate(['home']);  
+    } 
+    else{
+      this.router.navigate(['login']);  
+    } 
+  }
 
   ngOnInit() {
     this.password = 'password';

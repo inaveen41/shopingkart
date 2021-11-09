@@ -58,6 +58,6 @@ export class AppComponent {
     localStorage.setItem("login","0");
     console.log("loged out");
     localStorage.setItem('SessionUser','0');
-    localStorage.removeItem('email');
+    // localStorage.removeItem('email');
   }
 }

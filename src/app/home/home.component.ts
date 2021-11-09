@@ -2,9 +2,9 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CookieService } from 'angular2-cookie';
-import { Kart } from '../kart';
+import { Kart, userkart } from '../kart';
 import { KartDetailsService } from '../kart-details.service';
-import { userKart } from '../userkart';
+// import { userKart } from '../userkart';
 import { userkartDetailsService } from '../userkart-details';
 
 
@@ -17,8 +17,11 @@ export class HomeComponent implements OnInit {
 
   constructor(private httpClient: HttpClient, private cookie:CookieService,private route: ActivatedRoute,private kartdetails:KartDetailsService, private userkartdetails: userkartDetailsService) { }
   kart:Kart[];
-  kart1: Kart= new Kart();
-  userkart: userKart = new userKart();
+  email:string;
+  // kart1: Kart= new Kart();
+  // userkart: userKart = new userKart();
+  userkart: userkart = new userkart();
+  got:boolean;
   ngOnInit() {
     this.getlist();
   }
@@ -34,25 +37,81 @@ export class HomeComponent implements OnInit {
 
   addkart(id:number, price:number)
   {
-    this.userkart.emailid=localStorage.getItem('email');
-    this.userkart.productid=id;
-    this.userkart.quantity=1;
-    this.userkart.price=price;
-    this.userkartdetails.createuserkart(this.userkart).subscribe( data =>{
+this.email=localStorage.getItem('email');
+    this.userkartdetails.getuserkartbyId(id,this.email).subscribe(data =>{
       console.log(data);
-      // this.goToEmployeeList();
-      // this.msg="";
-    },
-    error => {if(error.status==500)
-    {
-      // this.msg="email already exist";
+      console.log(length);
+      console.log(data.length);
+      [0]
+      
 
-      console.log(error);
-    }
-  }
-    );
+      if(data.length==0)
+      {
+        console.log("this product dose not exist");
+        console.log(id, price);
+        this.userkart.emailid=this.email;
+        this.userkart.productid=id;
+        this.userkart.quantity=1;
+        this.userkart.price=price;
+        console.log(this.userkart);
+        this.uploadtokart();
+      }
+      else if(data[0].productid==id)
+      {
+        console.log(data.id);
+        console.log(data[0].productid);
+        console.log(data[0].id);
+        console.log("the product already exist");
+        data[0].quantity++;
+        data[0].price=data[0].price*data[0].quantity;
+        console.log(data[0].quantity)
+        console.log(data[0].price)
+        console.log(data)
+        this.userkartdetails.updateuserkart(data[0].id, data[0]).subscribe( data =>{
+          // this.goToEmployeeList();
+        }
+        , error =>{
+          if(error.status==500)
+          {
+            // this.emailerror="email alredy exist";
+          }
+          console.log(error);
+        });
+      }
+      else{
+     
+      }
+    },
+    error => {if(error.status==200)
+      {
+        console.log("fouind the user and products");
+
+      }
+
+    });
+
+
+
+  
   }
   
+uploadtokart()
+{
 
+ 
+  this.userkartdetails.createuserkart(this.userkart).subscribe( data =>{
+    console.log(data);
+    // this.goToEmployeeList();
+    // this.msg="";
+  },
+  error => {if(error.status==500)
+  {
+    // this.msg="email already exist";
+
+    console.log(error);
+  }
+}
+);
+}
 
 }

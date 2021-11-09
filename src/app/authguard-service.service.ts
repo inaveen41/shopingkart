@@ -18,6 +18,7 @@ export class AuthguardServiceService {
     }  
     logout() {  
       localStorage.removeItem('currentUser');  
+      localStorage.removeItem('email');
     }  
     login()
     {

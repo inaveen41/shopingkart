@@ -12,9 +12,20 @@ image:any;
 }
 
 export class userkart{
+    [x: string]: any;
     id: number;
     emailid:string;
     productid:number;
     quantity:number;
     price:number;
+}
+
+
+export class userkartbyemail{
+    title:string=null;
+    description:string=null;
+    image:any=null;
+    productid:number=0;
+    quantity:number=0;
+    price:number=0;
 }

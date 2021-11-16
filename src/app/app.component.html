@@ -1,10 +1,10 @@
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> Accept: text/html Cookie: Version=1
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
-    <nav style="background-color:orange; display:inline-block; height:7%;width:100%; position:sticky; top: 0px;z-index: 2;">
+    <nav style="background-color:orange; display:inline-block; height:7%;width:100%; position:sticky; top: 0px;z-index: 2; bottom: 5%;">
         <!-- <div> -->
         <a routerLink="home" routerLinkActive="active" class="nav-com">Home</a>
         <!-- </div> -->
@@ -14,15 +14,23 @@
 
 
         <a *ngIf="level==4" routerLink="create-employee" routerLinkActive="active" class="nav-com">Create Employee</a>
-        <a *ngIf="level==4" routerLink="kart" routerLinkActive="active" class="nav-com">upload_to_kart</a>
+        <a *ngIf="level==4" routerLink="upload_to_kart" routerLinkActive="active" class="nav-com">upload_to_kart</a>
         <!-- </div> -->
 
         <!-- <a routerLink="login" routerLinkActive="active" class="nav-com" style="float:right;left:0%;">login</a> -->
         <div *ngIf="log_val==0">
-            <a routerLink="login" routerLinkActive="active" class="nav-com" style="float:right;margin-top:-4%">login</a>
+            <a routerLink="login" routerLinkActive="active" class="nav-com" style="float:right;margin-top:-4%">Profile</a>
         </div>
         <div *ngIf="log_val==1">
-            <a class="nav-com" style="float:right;margin-top:-4%" [routerLink]="" (click)="logout()">Log Out</a>
+            <div class="dropdown">
+                <a class="nav-com" style="float:right;margin-top:-4%">Wellcome {{first_name}}<i class="fa fa-caret-down"></i></a>
+                <div class="dropdown-content">
+                    <a href="#">Profile</a>
+                    <a routerLink="kart" routerLinkActive="active">Cart <i style="font-size:24px" class="fa">&#xf07a;</i></a>
+                    <a [routerLink]="" (click)="logout()">Logout</a>
+                </div>
+            </div>
+
         </div>
 
     </nav>

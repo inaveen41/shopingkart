@@ -30,6 +30,7 @@ export class HomeComponent implements OnInit {
     this.kartdetails.getKartList().subscribe(data =>{
       // console.log("for delete 1"+this.employees);
       this.kart = data;
+    
       // this.kart1=this.kart;
       // console.log("for delete"+this.employees);
     });

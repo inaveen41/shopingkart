@@ -25,12 +25,14 @@ export class AppComponent {
   log_val:number=0;
   nv:string="hello";
   level:number;
+  first_name:string;
  user=0;
   ngOnInit() {
     // this.getlist();
     // this.log;
     this.log_val=Number(localStorage.getItem("SessionUser"));
     console.log("log_val = "+localStorage.getItem("SessionUser"));
+    this.first_name=localStorage.getItem('first_name');
   }
   ngDoCheck(): void {
     //Called every time that the input properties of a component or a directive are checked. Use it to extend change detection by performing a custom check.

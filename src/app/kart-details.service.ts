@@ -19,4 +19,10 @@ export class KartDetailsService {
   createkart(kart: Kart): Observable<any>{
     return this.httpClient.post(`${this.baseURL}`,kart);
   }
+
+
+  getkartbyId(id: number): Observable<Kart[]>{
+    return this.httpClient.get<Kart[]>(`${this.baseURL}/${id}`);
+  }
+  
 }

@@ -26,11 +26,19 @@ export class userkartDetailsService {
     // return this.httpClient.get<userkart>("http://localhost:8080/userkart/inkart?id="+productid+"&emailid="+email);
   }
 
+  getuserkartbyemail(email:string ): Observable<userkart>{
+    http://localhost:8080/userkart/inkart?id=5&emailid=naveen.immadi41@gmail.com
+    return this.httpClient.get<userkart>(`${this.baseURL}/${email}`);
+    // return this.httpClient.get<userkart>("http://localhost:8080/userkart/inkart?id="+productid+"&emailid="+email);
+  }
+
+
   updateuserkart(id: number, kart: userkart): Observable<Object>{
     return this.httpClient.put(`${this.baseURL}/${id}`, kart);
   }
 
-
-
+  deleteuserkart(id: number, email:string ): Observable<Object>{
+    return this.httpClient.delete(`${this.baseURL}/${id}/${email}`);
+  }
 
 }

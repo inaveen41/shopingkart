@@ -10,14 +10,16 @@ import { LoginComponent } from './login/login.component';
 
 import { UpdateEmployeeComponent } from './update-employee/update-employee.component';
 import {AuthenticationGuard} from './authentication.guard';
+import { KartComponent } from './kart/kart.component';
 const routes: Routes = [
   {path: 'employees', component: EmployeeListComponent, canActivate:[AuthenticationGuard]},
   {path: 'login', component: LoginComponent},
   {path:'create-employee', component: CreeateEmployeeComponent},
   {path: 'update-employee/:id', component: UpdateEmployeeComponent},
   {path: 'employee-details/:id', component: EmployeeDetailsComponent},
-  {path: 'kart', component: KartUploadComponent},
+  {path: 'upload_to_kart', component: KartUploadComponent},
   {path:'home',component:HomeComponent},
+  {path:'kart',component:KartComponent},
   
   {path:'',redirectTo:'login',pathMatch:'full'}
 ];

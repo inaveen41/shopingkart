@@ -15,7 +15,7 @@ export class KartUploadComponent implements OnInit {
 
   constructor(private router: Router, private httpClient: HttpClient, private kartdetails:KartDetailsService, private auth: AuthguardServiceService) { 
     if (this.auth.loggedIn) {  
-      this.router.navigate(['kart']);  
+      this.router.navigate(['upload_to_kart']);  
     } 
     else{
       this.router.navigate(['login']);  

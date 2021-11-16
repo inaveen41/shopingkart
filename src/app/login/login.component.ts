@@ -137,6 +137,7 @@ open()
       localStorage.setItem("level",this.employee.level.toString());
       localStorage.setItem('SessionUser',this.user);
       localStorage.setItem('email',this.employee.emailId);
+      localStorage.setItem('first_name',this.employee.firstName);
       // console.log("SessionUser value = " + localStorage.getItem("Sess"))
       this.cookie.put("user", this.employee.emailId);
       this.cookie_value=this.cookie.get("user");

@@ -27,8 +27,8 @@ length:number;
     this.gtotal=0;
     this.email=localStorage.getItem('email');
     this.userkartdetails.getuserkartbyemail(this.email).subscribe(data =>{
-      // console.log(data);
-      this.userkart=data;
+      console.log(data);
+      // this.userkart=data;
       
       // console.log("usert kart"+this.userkart)
       
@@ -41,7 +41,7 @@ length:number;
       for(this.i=0;this.i<this.userkart.length;this.i++)
       {
         // console.log("i="+this.i)
-        this.getdetails(Number(this.userkart[this.i].productid),this.i, this.userkart[this.i].quantity)
+        // this.getdetails(Number(this.userkart[this.i].productid),this.i, this.userkart[this.i].quantity)
       }
 
     });
@@ -55,32 +55,32 @@ length:number;
 
   {
     
-    // console.log("user kart id = "+id)
-          // console.log(" i1 = "+i)
-          // console.log("product id2 = "+this.userkart[this.i].productid)
-          this.httpClient.get('http://localhost:8080/setkart/kart/' + this.userkart[this.i].productid)
-          .subscribe(
-            res => {
-              // console.log(" i in get = "+i)
-              // console.log("product id in get = "+id)
-              this.retrieveResonse = res;
+  //   // console.log("user kart id = "+id)
+  //         // console.log(" i1 = "+i)
+  //         // console.log("product id2 = "+this.userkart[this.i].productid)
+  //         this.httpClient.get('http://localhost:8080/setkart/kart/' + this.userkart[this.i].productid)
+  //         .subscribe(
+  //           res => {
+  //             // console.log(" i in get = "+i)
+  //             // console.log("product id in get = "+id)
+  //             this.retrieveResonse = res;
 
-              // console.log("res = "+this.retrieveResonse.title);
-              this.image=res;
+  //             // console.log("res = "+this.retrieveResonse.title);
+  //             this.image=res;
              
-              this.userkart[i].title=this.retrieveResonse.title.toString();
-              this.userkart[i].description=this.retrieveResonse.description.toString();
+  //             this.userkart[i].title=this.retrieveResonse.title.toString();
+  //             this.userkart[i].description=this.retrieveResonse.description.toString();
         
               
-              this.base64Data = this.retrieveResonse.image;
-              this.userkart[i].image = 'data:image/jpeg;base64,' + this.base64Data;
-              // console.log("gtotal before = "+this.gtotal);
-              // console.log("product price is = "+this.retrieveResonse.price);
-              this.gtotal=this.gtotal+(quan*this.retrieveResonse.price);
-              // console.log("gtotal after = "+this.gtotal);
-              // console.log
-            }
-          );
+  //             this.base64Data = this.retrieveResonse.image;
+  //             this.userkart[i].image = 'data:image/jpeg;base64,' + this.base64Data;
+  //             // console.log("gtotal before = "+this.gtotal);
+  //             // console.log("product price is = "+this.retrieveResonse.price);
+  //             this.gtotal=this.gtotal+(quan*this.retrieveResonse.price);
+  //             // console.log("gtotal after = "+this.gtotal);
+  //             // console.log
+  //           }
+  //         );
   }
 
   akart(id:number, price:number, i:number)

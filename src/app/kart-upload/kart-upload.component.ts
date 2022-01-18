@@ -12,6 +12,8 @@ import { AuthguardServiceService } from '../authguard-service.service';
 })
 export class KartUploadComponent implements OnInit {
   selectedFile: any;
+  error:string;
+  errors:string;
 
   constructor(private router: Router, private httpClient: HttpClient, private kartdetails:KartDetailsService, private auth: AuthguardServiceService) { 
     if (this.auth.loggedIn) {  
@@ -33,11 +35,20 @@ export class KartUploadComponent implements OnInit {
     this.kartdetails.createkart(this.kart).subscribe( data =>{
       console.log(data);
       this.gotohome()
-    
+      this.router.navigate(['/home']);
 
     },
     error => {
-
+      console.log("error status = "+error.status)
+if(error.status==500)
+{
+  
+  this.error="Uppload the image with lower resolution";
+}
+else
+{
+  this.errors="Upploaded succefully";
+}
   }  
       );
   }

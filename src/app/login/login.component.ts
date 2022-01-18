@@ -122,6 +122,7 @@ open()
   this.httpClient.get<Employee>('http://localhost:8080/api/v1/login/' + this.email)
   .subscribe( data => {
     this.employee=data;
+    // console.log("while login employee details are: "+this.employee);
     console.log("employee password = "+this.employee.password+"entered password : "+this.user_password);
     if(this.employee.password==this.user_password)
     {
@@ -135,6 +136,7 @@ open()
       this.isOpen = !this.isOpen;
       localStorage.setItem("login","1");
       localStorage.setItem("level",this.employee.level.toString());
+      localStorage.setItem("Id",this.employee.id.toString());
       localStorage.setItem('SessionUser',this.user);
       localStorage.setItem('email',this.employee.emailId);
       localStorage.setItem('first_name',this.employee.firstName);

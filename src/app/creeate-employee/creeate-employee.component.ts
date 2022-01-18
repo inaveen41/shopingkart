@@ -57,7 +57,7 @@ export class CreeateEmployeeComponent implements OnInit {
       {
         this.msg="email already exist";
   
-        console.log(error);
+        console.log(error)
       }
       else if(error.status==415)
       {

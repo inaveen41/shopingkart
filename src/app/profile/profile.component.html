@@ -1,0 +1,29 @@
+<h3> Your Details</h3>
+<div style="width:50%">
+    <div style="width:40%; float: left;">
+        <div class="container row">
+            <div class="col-md-12">
+                <div *ngIf=retrievedImage>
+                    <div>
+                        <img [src]="retrievedImage" style="height: 20vw;width:15vw">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="width:60%; float: left;">
+        <div>
+            <label> <b> First Name: </b></label> {{employee.firstName}}
+        </div>
+        <div>
+            <label> <b> Last Name: </b></label> {{employee.lastName}}
+        </div>
+        <div>
+            <label> <b> Email Id: </b></label> {{employee.emailId}}
+        </div>
+        <div>
+            <label> <b> password: </b></label> {{employee.password}}
+        </div>
+    </div>
+</div>

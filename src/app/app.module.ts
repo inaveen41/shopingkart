@@ -21,6 +21,7 @@ import { KartUploadComponent } from './kart-upload/kart-upload.component';
 // import {Routes, RouterModule } from '@angular/router';  
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 import { KartComponent } from './kart/kart.component';
+import { ProfileComponent } from './profile/profile.component';
 const config: SocketIoConfig = { 
   url: 'https://inaveen41.github.io/shopingkart/', options: {}
 };
@@ -34,7 +35,8 @@ const config: SocketIoConfig = {
     LoginComponent,
     HomeComponent,
     KartUploadComponent,
-    KartComponent
+    KartComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

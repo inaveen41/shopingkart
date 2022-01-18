@@ -10,11 +10,11 @@
         <!-- </div> -->
 
         <!-- <div *ngIf="level==4" style=" display: inline-block;"> -->
-        <a *ngIf="level==4" routerLink="employees" routerLinkActive="active" class="nav-com">Employee list</a>
+        <a *ngIf="level==4" routerLink="employees" routerLinkActive="active" class="nav-com">User's list</a>
 
 
-        <a *ngIf="level==4" routerLink="create-employee" routerLinkActive="active" class="nav-com">Create Employee</a>
-        <a *ngIf="level==4" routerLink="upload_to_kart" routerLinkActive="active" class="nav-com">upload_to_kart</a>
+        <a *ngIf="level==4" routerLink="create-employee" routerLinkActive="active" class="nav-com">Create User</a>
+        <a *ngIf="level==4" routerLink="upload_to_kart" routerLinkActive="active" class="nav-com">upload_to_site</a>
         <!-- </div> -->
 
         <!-- <a routerLink="login" routerLinkActive="active" class="nav-com" style="float:right;left:0%;">login</a> -->
@@ -25,7 +25,7 @@
             <div class="dropdown">
                 <a class="nav-com" style="float:right;margin-top:-4%">Wellcome {{first_name}}<i class="fa fa-caret-down"></i></a>
                 <div class="dropdown-content">
-                    <a href="#">Profile</a>
+                    <a href="profile">Profile</a>
                     <a routerLink="kart" routerLinkActive="active">Cart <i style="font-size:24px" class="fa">&#xf07a;</i></a>
                     <a [routerLink]="" (click)="logout()">Logout</a>
                 </div>
